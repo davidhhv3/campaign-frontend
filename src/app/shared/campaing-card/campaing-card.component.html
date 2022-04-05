@@ -1,0 +1,81 @@
+<div id="campanhas__Container" >
+    
+    <div id="campanhas"  *ngFor="let campaing of campaings" (click)="redirect(campaing.idCampanha)">        
+       
+            <div class="covid__img__container" >
+                <small class="covid__title">Covid-19</small>
+                <i class='bx bxs-virus covid__img' ></i>            
+            </div>
+            <div class="campanha__info"  >
+                <section class="campanha__section__container">
+                    <div class="campanha__subsection borderBotton">
+                        <div class="campanha__subsection__img__container">
+                            <i id="campanha__subsection__img" class='bx bx-dots-horizontal-rounded'></i>
+                        </div>
+    
+                        <div class="campanha__subsection__dates__container">
+                            <p class="campanha__title__section">Titulo de campaña</p>
+                            <small class="campanha__title">{{campaing.titulo}}</small>                        
+                        </div>
+                    </div>
+                    <div class="campanha__subsection borderBotton" >
+                        <div class="campanha__subsection__img__container">                                              
+                            <i id="campanha__subsection__img" class='bx bx-star'></i>
+                        </div>
+    
+                        <div class="campanha__subsection__dates__container">
+                            <p class="campanha__title__section">Tipo de campaña</p>
+                            <small class="campanha__title">{{campaing.Tipo_idTipo}}</small>                        
+                        </div>
+                    </div>            
+                </section>
+    
+                <section class="campanha__section__container">
+                    <div class="campanha__subsection borderBotton">
+                        <div class="campanha__subsection__img__container">                        
+                            <i id="campanha__subsection__img" class='bx bx-volume-full'></i>
+                        </div>
+    
+                        <div class="campanha__subsection__dates__container">
+                            <p class="campanha__title__section">Estatus de campaña</p>
+                            <small class="campanha__title">{{campaing.Estatus_idEstatus}}</small>                        
+                        </div>
+                    </div>
+                    <div class="campanha__subsection borderBotton" >
+                        <div class="campanha__subsection__img__container">
+                            <i id="campanha__subsection__img" class='bx bx-user-voice'></i>
+                        </div>
+    
+                        <div class="campanha__subsection__dates__container">
+                            <p class="campanha__title__section">Numero de usuarios impactados</p>
+                            <small class="campanha__title">{{campaing.num_users}}</small>                        
+                        </div>
+                    </div>
+                </section>
+    
+                <section class="campanha__section__container" >
+                    <div class="campanha__subsection borderBotton">
+                        <div class="campanha__subsection__img__container">
+                            <i id="campanha__subsection__img" class='bx bx-calendar'></i>
+                        </div>
+    
+                        <div class="campanha__subsection__dates__container">
+                            <p class="campanha__title__section">Fecha y hora de creación</p>
+                            <small class="campanha__title">{{campaing.creacion | date: 'short'}}</small>                        
+                        </div>
+                    </div>
+                    <div class="campanha__subsection" >
+                        <div class="campanha__subsection__img__container">
+                            <i id="campanha__subsection__img" class='bx bx-calendar'></i>
+                        </div>
+    
+                        <div class="campanha__subsection__dates__container">
+                            <p class="campanha__title__section">Fecha y hora de envió</p>
+                            <small class="campanha__title">{{campaing.envio}}</small>                        
+                        </div>
+                    </div>
+                </section>     
+            </div>    
+    </div>
+     
+</div>

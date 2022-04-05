@@ -1,0 +1,24 @@
+<div class="campaing-form-main-container">
+    <form class="campaing-form-container" [formGroup]="formGroup">
+        <div class="form-campaing-title">Formulario Campaña</div>
+        <div class="title-field-form">Titulo</div>
+        <input   type="text"  class="formInput"  formControlName="titulo" [class.is-invalid]="invalidFields('titulo')">
+        <div class="title-field-form">Tipo</div>
+        <select class="selectForm" formControlName="Tipo_idTipo" [class.is-invalid]="invalidFields('Tipo_idTipo')">
+            <option *ngIf="!edit"></option>
+            <option *ngFor="let type of campaingTypes" value="{{type.idTipo}}">
+                {{type.tipo}}</option>                      
+        </select>
+        <div class="title-field-form">Estado</div>
+        <select class="selectForm" formControlName="Estatus_idEstatus" [class.is-invalid]="invalidFields('Estatus_idEstatus')">
+            <option *ngIf="!edit"></option>
+            <option *ngFor="let status of campaingStatus" value="{{status .idEstatus}}">
+                {{status.estatus}}</option>                      
+        </select>
+        <div class="title-field-form">Numero de usuarios impactados</div>
+        <input   type="number"  class="formInput"  formControlName="num_users" [class.is-invalid]="invalidFields('num_users')" >
+        <button *ngIf="!edit" class="btn-save formInput" (click)="validateForm('save')">Guardar</button>
+        <app-form-buttons *ngIf="edit" [left-btn]="'Modificar'" [right-btn]="'Eliminar'" (updateElement)="validateForm($event)" (deleteElement)="openDialog($event)"></app-form-buttons>
+    </form>
+
+</div>

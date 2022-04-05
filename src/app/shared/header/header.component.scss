@@ -1,0 +1,113 @@
+#header__container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+
+    #logo__container{        
+        width: 15%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+
+        #logo{
+            color: wheat;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-left: 1.5rem;
+        }
+    }
+    #main__menu{
+        /* background-color: blue; */
+        width: 85%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        transition: all 0.6s;  
+        
+
+        .main__menu_items:hover >.main__menu_items__img{
+            color:aqua;
+        }
+        .main__menu_items:hover > .main__menu_items__span{
+            color:aqua;
+        }
+
+        .main__menu_items{                      
+            height: 100%;
+            display: flex;
+            align-items: center;            
+            gap: 1rem;
+            cursor: pointer;
+            
+
+            .main__menu_items__img{                
+                color: #5282dd;
+                font-size: 2rem;
+            }
+            .main__menu_items__span{
+                color: white;
+                font-size: 1.67rem;
+                font-weight: 500;
+            }
+            #person{
+                color: white;
+                font-size: 1.67rem;
+                font-weight: 500;
+            }
+
+        }
+    }
+    #btn__menu__deploy__container{
+        display: none;   
+        width: 4rem; 
+        height: 4rem;    
+    }
+}
+
+/* ------------------------- Responsive ------------------------------------------------------------------------------------------------------ */
+@media(max-width: 1000px){
+    .main__menu_items{
+        gap:0rem !important;
+    }
+}
+@media(max-width: 760px){
+    #main__menu{  
+        width: 101% !important;        
+        position: absolute;
+        top: 4rem;        
+        height: calc(100vh - 4rem);
+        flex-direction: column; 
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); 
+        background: #000735 ;                          
+    }
+    .main__menu_items{        
+        border-bottom: 1px solid #9088887d;
+        width: 100%;        
+        justify-content: center !important;                
+    }
+    #logo__container{
+        width: 50% !important;        
+    }
+    #btn__menu__deploy__container{                     
+        display: flex !important;        
+        width: 50% !important; 
+        justify-content: flex-end; 
+        align-items: center;        
+
+        #btn__menu__deploy{
+            width: 5rem;
+            height: 4rem;
+            background-color:transparent;
+            color: white;  
+            border: none;
+            font-size: 4rem;
+            font-weight: 700;
+            outline: none;                      
+        }
+    }   
+
+}

@@ -1,0 +1,23 @@
+<div class="home-container">
+    <header id="main__header">  
+        <app-header></app-header>      
+    </header>
+    <section id="main__section__container">
+        <section  id="main__section">
+
+            <aside #main__aside id="main__aside" >            
+                <div  #sidebar__main__container id="sidebar__main__container" >   
+                    <app-sidebar></app-sidebar>                 
+                </div>                  
+            </aside>
+
+            <main #main__content id="main__content" >
+                <router-outlet></router-outlet>
+            </main>
+        </section>        
+    </section>  
+    <button (click)="deploySideBar()" #btn__deploy id="btn__deploy">
+        <img id="img__button__deploy" [src]="arrowLeft == true ? '../assets/chevron-left-regular-24.png' : '../assets/chevron-right-regular-24.png'" alt="">
+    </button>
+     
+</div>

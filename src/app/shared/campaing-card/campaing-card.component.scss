@@ -1,0 +1,124 @@
+@mixin displayStyle($tipo,$justifyContent){
+    display:$tipo;
+    justify-content: $justifyContent;         
+}
+#campanhas__Container{
+    width: 100%;    
+    
+    #campanhas:hover{
+        background: linear-gradient(90deg, rgb(43, 63, 141) 0%, rgb(115, 128, 163) 100%);
+    }
+
+    #campanhas{
+        width: 100%;
+        margin: auto;     
+        background: linear-gradient(90deg, rgba(26,36,75,1) 0%, rgba(83,94,127,1) 100%);
+        border-radius: 1rem; 
+        cursor: pointer;
+        
+        
+        @include displayStyle(flex,space-between);
+        margin:{
+            bottom: 1rem ; 
+            top: 1rem;
+        }  
+        border: 1px solid #5282dd; 
+         
+    
+        .covid__img__container{        
+            width: 20%;
+            @include displayStyle(flex,center);
+            flex-direction: column;        
+            align-items: center;
+            gap: 1rem; 
+            border-right: 3px solid #cd8af7;      
+            
+    
+            .covid__title{
+                font-size: 1rem;
+                color: #cd8af7;
+            }
+            .covid__img{
+                font-size: 5rem;  
+                color: #cd8af7;          
+            }
+        }
+        .campanha__info{        
+            width: 80%;
+            @include displayStyle(flex,space-between);        
+            flex-direction: column;        
+    
+            .campanha__section__container{
+                width: 100%;
+                height: 33.3333%;                       
+                display: flex;
+                
+    
+                .campanha__subsection{
+                    width: 50%;
+                    border-left: 1px solid #9088887d;                               
+                    padding: 0.1rem;  
+                    @include displayStyle(flex,space-between);                
+    
+                    .campanha__subsection__img__container{                    
+                        width: 15%;
+                        margin: 0 1rem;
+                        @include displayStyle(flex,center);                    
+                        
+                        #campanha__subsection__img{                            
+                            color:#cd8af7;
+                            font-size: 2rem;                        
+                        }
+                    }
+                    .campanha__subsection__dates__container{                    
+                        width: 85%;
+                        @include displayStyle(flex,space-around);                     
+                        flex-direction: column;                  
+    
+                        .campanha__title__section{
+                            font-size: 0.8rem;
+                            color: #cd8af7;
+                        }
+                        .campanha__title{
+                            font-size: 1rem;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .borderBotton{
+        border-bottom: 1px solid #9088887d;
+    }
+    
+    /* ---------------------------------- Responsive  ------------------------------------------------------------------------------------- */
+    @media(max-width: 760px){
+        .covid__img__container{
+            width: 0% !important;
+            display: none !important;
+        }
+        .campanha__info{
+            width: 100% !important;
+    
+            .campanha__section__container{
+                flex-direction: column;
+        
+                .campanha__subsection{
+                    width: calc(100% - 3px)!important;
+                    border-left:none !important;
+    
+                    .campanha__subsection__img__container{              
+                        margin: 0 0.5rem !important;                                        
+                        
+                        #campanha__subsection__img{                       
+                            font-size: 1.5rem !important;                        
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+     
+}
